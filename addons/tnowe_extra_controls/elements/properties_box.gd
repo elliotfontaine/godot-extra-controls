@@ -148,7 +148,7 @@ func get_value(key : StringName) -> Variant:
 ## Retrieve a value of whatever type, from a property by its index in the box.
 func get_value_at(index : int) -> Variant:
 	var editor = _editors[index]
-	if editor is Button: return editor.pressed
+	if editor is Button: return editor.is_pressed()
 	if editor is SpinBox: return editor.value
 	if editor is LineEdit: return editor.text
 	if editor is TextEdit: return editor.text
@@ -158,7 +158,7 @@ func get_value_at(index : int) -> Variant:
 ## Retrieve a boolean.
 func get_bool(key : StringName) -> bool:
 	var editor = _editors[_keys[key]]
-	return editor.pressed
+	return editor.is_pressed()
 
 ## Retrieve a number or option.
 func get_int(key : StringName) -> int:
